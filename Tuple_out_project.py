@@ -49,7 +49,8 @@ def playgame():
             return 0
         print(dice)
         reroll = input("Do you want to reroll any of your dice? y/n")  
-
+    print("final roll for this round")
+    print(dice)
     score = sum(dice)
     return score
 
