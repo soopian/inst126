@@ -3,12 +3,15 @@ import random
 
 
 def rolldice():
+    #rolls an individual die
     return random.randint(1,6)
 
 def checktuple(dice):
+    #checks to see if the player has tupled out
     return len(set(dice)) == 1
 
 def checkfixed(dice):
+    #checks to see if any die needs to be fixed and returns a list of which die are fixed
     fixeddice = [False,False,False]
     if dice[0] == dice[1]:
         fixeddice[0] = True
@@ -20,7 +23,11 @@ def checkfixed(dice):
         fixeddice[1] = True
         fixeddice[2] = True
     return fixeddice
+
+
+
 def playgame():
+    #plays a turn of tuple out
     die1 = rolldice()
     die2 = rolldice()
     die3 = rolldice()
