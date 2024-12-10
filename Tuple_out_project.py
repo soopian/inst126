@@ -1,10 +1,15 @@
 #tuple out project
 import random
+import pandas as pd
+die_rolls = [0] * 6 
 
 
 def rolldice():
     #rolls an individual die
-    return random.randint(1,6)
+    roll = random.randint(1,6)
+    die_rolls[roll - 1] += 1
+
+    return roll
 
 def checktuple(dice):
     #checks to see if the player has tupled out
@@ -49,8 +54,11 @@ def playgame():
             return 0
         print(dice)
         reroll = input("Do you want to reroll any of your dice? y/n")  
-    print("final roll for this round")
+        
+    print("final roll for this round:")
     print(dice)
+
+
     score = sum(dice)
     return score
 
@@ -71,4 +79,15 @@ while rerun == "y":
     if playerscore > highscore:
         print("That's a new highscore!")
         highscore = playerscore
+    die_roll = {"One" : die_rolls[0],
+             "Two" : die_rolls[1],
+             "Three" : die_rolls[2],
+             "Four" : die_rolls[3],
+             "Five" : die_rolls[4],
+             "Six" : die_rolls[5]}
+    dierolls = {"Number" : list(die_roll.keys()),
+              "rolls" : list(die_roll.values())}
+    luck_df = pd.DataFrame.from_dict(dierolls)
+    print(luck_df)
     rerun = input("Do you want to play again? y/n")
+
