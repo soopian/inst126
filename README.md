@@ -33,8 +33,8 @@ Continue rerolling or finishing the round until you decide to stop.
 
 Commands:
 
-y/n: Used to indicate if you want to reroll dice or play another game.
-Choose Dice: You can select which dice to reroll by inputting the corresponding number (1, 2, or 3).
+- y/n: Used to indicate if you want to reroll dice or play another game.
+- Choose Dice: You can select which dice to reroll by inputting the corresponding number (1, 2, or 3).
 
  Code Breakdown
 
