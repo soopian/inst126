@@ -39,9 +39,13 @@ Choose Dice: You can select which dice to reroll by inputting the corresponding 
  Code Breakdown
 
 Functions
+
 rolldice(): Simulates the roll of a single die, returning a random number between 1 and 6.
+
 checktuple(dice): Checks if the player has "tupled out" by comparing if all dice have the same value.
+
 checkfixed(dice): Checks which dice are "fixed" (those that match with another die) and cannot be rerolled.
+
 playgame(): A function that simulates one round of the game, rolls the dice, handles rerolling, and calculates the score for that round.
 
  Main Game Loop
