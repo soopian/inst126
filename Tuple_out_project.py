@@ -1,6 +1,8 @@
 #tuple out project
 import random
 import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 die_rolls = [0] * 6 
 
 
@@ -86,8 +88,10 @@ while rerun == "y":
              "Five" : die_rolls[4],
              "Six" : die_rolls[5]}
     dierolls = {"Number" : list(die_roll.keys()),
-              "rolls" : list(die_roll.values())}
+              "Rolls" : list(die_roll.values())}
     luck_df = pd.DataFrame.from_dict(dierolls)
     print(luck_df)
+    sns.barplot(data = luck_df, x = "Number", y = "Rolls")
+    plt.show()
     rerun = input("Do you want to play again? y/n")
 
